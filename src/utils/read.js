@@ -8,7 +8,7 @@ export const read = (day) => {
 
 export const numList = (input) => input.split('\n').map((str) => Number(str));
 
-export const readToList = (day, type) =>
+export const readToList = (day, type, splitOn = ' ') =>
   read(day)
     .split('\n')
-    .map((str) => str.split(' ').map((e, i) => type[i](e)));
+    .map((str) => str.split(splitOn).map((e, i) => type[i](e)));
